@@ -18,4 +18,7 @@ repos = info['repositories'].map do |repo|
 end
 
 template = File.read('./template.md.erb')
-puts ERB.new(template).result(binding)
+
+File.open("output.md","w") do |text|
+  text.puts ERB.new(template, nil, '%').result(binding)
+ end

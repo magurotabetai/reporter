@@ -1,0 +1,7 @@
+token: github_token
+
+user: user_name
+
+repositories:
+  - user_name/repo1
+  - user_name/repo2
