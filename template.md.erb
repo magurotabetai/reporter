@@ -1,0 +1,13 @@
+# Weekly Report
+
+## <%= last_tuesday %> ~ <%= today %>
+
+### Summary of ongoing development
+
+<% repos.each do |repo| %>
+  <% next if repo[:changes].empty? %>
+  #### <%= repo[:name] %>
+  <% repo[:changes].each do |pr| %>
+    - <%= pr %>
+  <% end%>
+<% end %>
