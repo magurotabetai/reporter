@@ -3,11 +3,11 @@
 ## <%= last_tuesday %> ~ <%= today %> ・ Development summary
 
 ### Completed Tasks
+<% repos.each do |repo| -%>
+<% next if repo[:changes].empty? -%>
 
-<% repos.each do |repo| %>
-  <% next if repo[:changes].empty? %>
 #### <%= repo[:name] %>
-  <% repo[:changes].each do |pr| %>
-- <%= pr %>
-  <% end%>
-<% end %>
+
+<% repo[:changes].each do |pr| -%>
+- [<%= pr[:title] %>](<%= pr[:url] %>)
+<% end %><% end -%>
